@@ -4,6 +4,7 @@ function generateTimeSlots(selectedDate) {
     const isToday = selectedDate &&
                     selectedDate.toDateString() === now.toDateString();
 
+                    
     for (let h = 0; h < 24; h++) {
         [0, 30].forEach(m => {
             // Use selectedDate for slotDate
