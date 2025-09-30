@@ -20,7 +20,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        echo 'techatpark.com' > dist/CNAME
       env:
         CI: true
     - name: Deploy 🚀
