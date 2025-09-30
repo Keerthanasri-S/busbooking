@@ -9,6 +9,7 @@ function generateTimeSlots(selectedDate) {
             const slotDate = selectedDate ? new Date(selectedDate) : new Date();
             slotDate.setHours(h, m, 0, 0);
 
+            
             // Skip past times if today
             if (isToday && slotDate.getTime() <= now.getTime() + 10 * 60 * 1000) return;
 
