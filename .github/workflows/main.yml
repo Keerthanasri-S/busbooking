@@ -20,11 +20,9 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-
       env:
         CI: true
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: build
-        branch: gh-pages
+        folder: ./dist
