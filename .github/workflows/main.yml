@@ -27,37 +27,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build:staging --if-present
-
-      - name: Copy additional files to dist
-        run: |
-          # Copy data folder (essential for chapter leaders functionality)
-          if [ -d "./data" ]; then
-            cp -r ./data ./dist/
-            echo "✅ Data folder copied successfully"
-          else
-            echo "⚠️ No data folder found"
-          fi
-          
-          # Copy public folder (for images)
-          if [ -d "./public" ]; then
-            cp -r ./public ./dist/
-            echo "✅ Public folder copied successfully"
-          else
-            echo "⚠️ No public folder found"
-          fi
-          
-          # Copy assets folder (for logos and photos)
-          if [ -d "./assets" ]; then
-            cp -r ./assets ./dist/
-            echo "✅ Assets folder copied successfully"
-          else
-            echo "⚠️ No assets folder found"
-          fi
-          
-          # Verify the build
-          echo "📁 Contents of dist folder:"
-          ls -la ./dist/
+          npm run build-if-present
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
