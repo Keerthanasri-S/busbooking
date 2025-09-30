@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language.Lang }}">
+
+<head>
+
+
+  {{ block "head" . }}{{ partial "head" . }}{{end}}
+
+
+
+
+</head>
+
+<body>
+  
+
+  {{ block "header" . }}{{ partial "header" . }}{{end}}
+
+ 
+
+  <main class="container-fluid{{ if .IsHome }} mas-head{{end}} w-100 h-100">
+    <div class="row w-100 h-100" id="main-container">
+      {{ block "main" . }}{{end}}
+    </div>
+    
+  </main>
+
+
+  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+
+
+  {{ block "scripts" . }}{{ partial "scripts" . }}{{end}}
+
+
+
+
+  
+</body>
+
+</html>

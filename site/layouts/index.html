@@ -1,0 +1,233 @@
+{{ define "main" }}
+<div class="main-container p-0" style="height:94vh;position:absolute;">
+        <div class="container-fluid map-design p-0">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23757.044854254607!2d78.19384700298325!3d9.954129900451678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1758089670886!5m2!1sen!2sin"
+                width="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- <div class="map-fare-badge">
+                <span class="badge bg-dark text-white p-2">ONE WAY ONE FARE</span>
+            </div> -->
+        </div>
+        <div class="container p-0">
+            <div class="row g-0 book-mobile-view ">
+                <!-- Booking Form Sidebar -->
+                <div class="col-lg-5 col-xl-4 booking-sidebar">
+                    <div class="booking-form-container">
+                         <ul class="nav nav-tabs booking-tabs" id="myTab"  role="tablist">
+                            <li>
+                                <label class="tab-btn active" data-tab="cab">Book a cab</label>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#profile" type="button" role="tab" aria-controls="Pickup"
+                                    aria-selected="false">Pickup</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#package"
+                                    type="button" role="tab" aria-controls="Package"
+                                    aria-selected="false">Package</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade active show" id="profile" role="tabpanel"
+                                aria-labelledby="profile-tab">
+                                <!-- Book a cab form -->
+                                <div class="booking-form">
+                                    <div class="mb-2">
+                                        <label class="form-label">Mobile Number:</label>
+                                        <input type="tel" class="form-control" value="9903367892">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">From:</label>
+                                        <!-- <input type="text" class="form-control" value="Nungambakkam"> -->
+                                        <div>
+                                            <select class="form-control" id="cars" name="cars">
+                                                <option value="volvo">Kodampakkam</option>
+                                                <option value="saab">Nungambakkam</option>
+                                                <option value="fiat">Adyar</option>
+                                                <option value="audi">Poes Garden</option>
+                                                <option value="audi">Meenampakkam</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">To:</label>
+                                        <!-- <input type="text" class="form-control" value="Nungambakkam"> -->
+                                        <div>
+                                            <select class="form-control" id="cars" name="cars">
+                                                <option value="volvo">Velachery</option>
+                                                <option value="saab">Guindy</option>
+                                                <option value="fiat">Perungudi</option>
+                                                <option value="audi">T.Nagar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                        <label>Date :</label>
+                                        <input type="date" id="pickupDate" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label><i class=" me-1"></i> Time:</label>
+                                        <div class="time-picker-container">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="pickupTime"  readonly placeholder="hh:mm">
+                                            <span class="input-group-text"  id="pickupTimeBtn">
+                                            <i class="bi bi-clock"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Vehicle:</label>
+                                        <!-- <input type="text" class="form-control" value="Toyota Innova"> -->
+                                        <div>
+                                            <select class="form-control" id="cars" name="cars">
+                                                <option value="volvo">Indica Non A/c</option>
+                                                <option value="saab">Indica A/c</option>
+                                                <option value="fiat">Tavera</option>
+                                                <option value="audi">Tata sumo</option>
+                                                <option value="audi">Toyoto Innova</option>
+                                                <option value="audi">Audi</option>
+                                                <option value="audi">Benz</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="mb-2">
+                                        <label class="form-label">Package:</label>
+                                        <input type="text" class="form-control" value="8 hours">
+                                    </div> -->
+                                    <div class="price-info mb-4">
+                                        <div><span class="price-main">₹ 1200.00</span><span class="fs13"> - 40 kms.
+                                                (Additional ₹
+                                                15.00 / km)</span></div>
+                                    </div>
+                                    <div class="text-end">
+                                        <!-- <button class="btn btn-success btn-md book-now-btn">Book Now</button> -->
+                                        <button type="button" class="btn btn-success">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab">
+
+                                <!-- Book a cab form -->
+                                <div class="booking-form">
+                                    <div class="mb-2">
+                                        <label class="form-label">Mobile Number:</label>
+                                        <input type="tel" class="form-control" value="99033 67892">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">From:</label>
+                                        <!-- <input type="text" class="form-control" value="Nungambakkam"> -->
+                                        <div>
+                                            <select class="form-control" id="cars" name="cars">
+                                                <option value="volvo">Kodampakkam</option>
+                                                <option value="saab">Nungambakkam</option>
+                                                <option value="fiat">Adyar</option>
+                                                <option value="audi">Poes Garden</option>
+                                                <option value="audi">Meenampakkam</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                        <label>Date :</label>
+                                        <input type="date" id="packageDate" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label><i class="me-1"></i> Time:</label>
+                                        <div class="time-picker-container">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="packageTime" readonly placeholder="hh:mm">
+                                            <span class="input-group-text" type="button" id="packageTimeBtn">
+                                            <i class="bi bi-clock"></i>
+                                            </span>
+                                        </div>
+                                        <div class="dropdown-menu p-0 overflow-auto" style="max-height: 200px; width: 100px;" id="packageTimeDropdown">
+                                            <!-- Times will be added by JavaScript -->
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Vehicle:</label>
+                                        <div>
+                                            <select class="form-control" id="cars" name="cars">
+                                                <option value="volvo">Indica Non A/c</option>
+                                                <option value="saab">Indica A/c</option>
+                                                <option value="fiat">Tavera</option>
+                                                <option value="audi">Tata sumo</option>
+                                                <option value="audi">Toyoto Innova</option>
+                                                <option value="audi">Audi</option>
+                                                <option value="audi">Benz</option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="dropdown form-control">
+                                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                Toyota Innova
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">ETIOS</a></li>
+                                                <li><a class="dropdown-item" href="#">Swift Dzire</a></li>
+                                                <li><a class="dropdown-item" href="#">Tata Indica</a></li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Package:</label>
+                                        <!-- <input type="text" class="form-control" value="8 hours"> -->
+                                        <div>
+                                            <select class="form-control" id="hours" name="hours">
+                                                <option value="2hours">2 Hours</option>
+                                                <option value="4hours">4 Hours</option>
+                                                <option value="6hours">6 Hours</option>
+                                                <option value="8hours">8 Hours</option>
+                                                <option value="10hours">10 Hours</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="price-info mb-4">
+                                        <div><span class="price-main">₹ 600.00</span><span class="fs13"> - 40 kms.
+                                                (Additional ₹
+                                                15.00 / km)</span></div>
+                                    </div>
+                                    <div class="text-end">
+                                        <!-- <button class="btn btn-success btn-md book-now-btn">Book Now</button> -->
+                                        <button type="button" class="btn btn-success">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Container -->
+            <div class="col-lg-8 col-xl-9 map-container">
+                <div class="map-wrapper">
+                    <div class="fare-badge">
+                        <div class="fare-text">ONE WAY ONE FARE</div>
+                    </div>
+                    <div id="map" class="map-placeholder">
+                        <div class="map-overlay">
+                            <div class="location-markers">
+                                <div class="marker start-marker" style="top: 45%; left: 25%;">
+                                    <i class="fas fa-map-marker-alt text-success"></i>
+                                    <span class="marker-label">Nungambakkam</span>
+                                </div>
+                                <div class="marker end-marker" style="top: 35%; right: 30%;">
+                                    <i class="fas fa-map-marker-alt text-danger"></i>
+                                    <span class="marker-label">Destination</span>
+                                </div>
+                            </div>
+                            <div class="route-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="src\js\app.js"></script>
+{{ end }}
